@@ -5,9 +5,9 @@ import sqlite3
 
 DATABASE = 'database.db'
 
-@app.route('/')
+@app.route('/')# login
 def index():
     
     return render_template(
-        'index.html',
+        'login.html',
     )
