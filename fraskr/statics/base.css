@@ -13,3 +13,7 @@ input {
   padding: 3px;
   margin: 5px 0;
 }
+
+.register {
+  text-align: right;
+}
