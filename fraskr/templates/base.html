@@ -2,10 +2,24 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}{% endblock %}</title>
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>-->
+    <link href="../statics/base.css" rel="stylesheet" type="text/css">
+    <title>login</title>
 </head>
 <body>
-    {% block content %}{% endblock %}
+    <!--{% block content %}-->
+    <form name="login_form">
+        <div class="login_form_top">
+          <h1>ログイン画面</h1>
+          <p>ユーザID、パスワードをご入力の上、「ログイン」ボタンをクリックしてください。</p>
+        </div>
+        <div class="login_form_btm">
+          <input type="id" name="user_id" placeholder="ユーザーIDを入力してください"><br>
+          <input type="password" name="password"placeholder="パスワードを入力してください">
+        </div>
+        <button type="submit">ログイン</button>
+      </form>
+    <!--{% endblock %}-->
 </body>
 </html>
