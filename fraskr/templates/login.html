@@ -2,14 +2,45 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>-->
+    <link href="../statics/base.css" rel="stylesheet" type="text/css">
+    <title>login</title>
 </head>
 <body>
-    <main>
-        <form method="post">
-            <h1>Please sign in</h1>
+    <form name="login_form">
+        <form method="POST">
+        {{ form.hidden_tag() }}
+            <div class="login_form_top">
+            <h1>ログイン画面</h1>
+            <p>ユーザID、パスワードをご入力の上、「ログイン」ボタンをクリックしてください。</p>
+            </div>
+            <div class="login_form_btm">
+            {{ form.email(class="form-control", placeholder="メールアドレスを入力してください") }}<br>
+            {{ form.password(class="form-control", placeholder="パスワードを入力してください") }}
+            </div>
+
+            <div class="checkbox mb-3">
+                <label>
+                  <input type="checkbox" name="remember_me" value="remember-me"> Remember me
+                </label>
+              </div>
+      
+              <p>
+                {% with messages = get_flashed_messages() %}
+                  {% if messages %}
+                    {% for message in messages %}
+                      {{ message }}
+                    {% endfor %}
+                  {% endif %}
+                {% endwith %}
+              </p>
+            
+            {{ form.submit() }}
         </form>
-    </main>
+        <div class="register">
+        <a href="/register">新規ユーザー登録</a>
+        </div>
+    </form>
 </body>
 </html>
